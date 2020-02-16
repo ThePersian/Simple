@@ -1,3 +1,10 @@
+:root {
+    --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    --primary-gradient: linear-gradient(60deg, #00B9FF 0%, #00E5FF 125%);
+    --accent-gradient: linear-gradient(238deg, #034AFD 0%, #054CFD 100%);
+    /* box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 10px 10px -5px rgba(0, 0, 0, .04); */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,15 +12,14 @@
 
 body {
     font-family: Google Sans;
-    background: linear-gradient(60.78deg, #00B9FF 0%, #00E5FF 125.1%);
+    background: var(--primary-gradient)
 }
 
 .wrapper {
     display: grid;
     grid-template-rows: max-content 1fr;
     justify-content: center;
-    margin-top: 30px;
-    margin-bottom: 60px;
+    padding: 30px 0;
     grid-gap: 30px;
 }
 
@@ -43,7 +49,7 @@ textarea {
     color: black;
     max-width: 1200px;
     width: 100vw;
-    height: 800px;
+    height: 700px;
     margin: auto;
     overflow: hidden;
     border: none;
@@ -55,14 +61,13 @@ textarea {
     border-radius: 4px;
     padding: 20px;
     box-sizing: border-box;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 10px 10px -5px rgba(0, 0, 0, .04);
+    box-shadow: var(--card-shadow)
 }
 
 .btn-run {
-    width: 64px;
-    height: 64px;
-    background: linear-gradient(238.1deg, #034AFD 0.15%, #054CFD 100%);
+    width: 68px;
+    height: 68px;
+    background: var(--accent-gradient);
     border-radius: 50%;
     position: fixed;
     bottom: 20px;
@@ -77,6 +82,7 @@ textarea {
     transition: transform .2s ease-in-out;
     transform-origin: center;
     cursor: pointer;
+    border: 4px solid #fff;
 }
 
 .btn-run svg {
@@ -91,4 +97,14 @@ textarea {
 
 .btn-run:hover {
     transform: translateX(-50%) scale(1.1);
+}
+
+.output {
+    height: 100px;
+    background: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-weight: bold;
+    box-shadow: var(--card-shadow)
 }

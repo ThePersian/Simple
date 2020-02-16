@@ -11,7 +11,17 @@ import (
 
 var templates *template.Template
 
+//SOURCE CODE TO BE EXECUTED
+var code string = `
+package main
 
+import(
+        "fmt"
+)
+
+func main() {
+    fmt.Println("Hello, playground")
+}`
 
 func main() {
 
@@ -38,20 +48,8 @@ func main() {
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 
-	// sourceCode := r.FormValue("code")
-	// fmt.Println(sourceCode)
-
-	//SOURCE CODE TO BE EXECUTED
-	code := `
-package main
-
-import(
-        "fmt"
-)
-
-func main() {
-    fmt.Println("Hello, playground")
-}`
+	sourceCode := r.FormValue("code")
+	fmt.Println(sourceCode)
 
 	templates.ExecuteTemplate(w, "index.html", code)
 }
