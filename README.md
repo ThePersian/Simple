@@ -19,7 +19,7 @@ A variable is a storage location for holding a value.
 // Bind values to names with let-statements
 
 let version = 1;
-let name = "Monkey programming language";
+let name = "Simple programming language";
 let myArray = [1, 2, 3, 4, 5];
 let coolBooleanLiteral = true;
 let add = fn(){}
